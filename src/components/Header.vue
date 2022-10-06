@@ -24,7 +24,6 @@
       nombre:"",
       edad:0,
       correo:"",  
-      Formulario,
     }),
   
     };
