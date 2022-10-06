@@ -21,9 +21,11 @@
       data:() => ( {
       url:"https://cdn.svgporn.com/logos/vue.svg?response-content-disposition=attachment%3Bfilename%3Dvue.svg",
       alt: "Vue.js",
-      nombre:"",
-      edad:0,
-      correo:"",  
+      proyecto:"",
+      tipo:"",
+      urgente: flase,
+      proyectos:[],  
+      Formulario,
     }),
   
     };

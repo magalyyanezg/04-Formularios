@@ -23,11 +23,10 @@
 
 <script>
   
-  //import Header from "./components/Header.vue"
-  import Formulario from "./components/Formulario.vue"
+  import Header from "./components/Header.vue"
   export default {
     components: {
-      Formulario,
+      Header,
     }
   }
 </script>
