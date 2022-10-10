@@ -17,6 +17,9 @@ import TotalProyectos from './TotalProyectos.vue';
                 completado: false,
             };
             this.proyectos.push(proyecto);
+
+            this.saveData();
+
             this.proyecto = "";
             this.tipo = "";
             this.urgente = false;
@@ -25,6 +28,15 @@ import TotalProyectos from './TotalProyectos.vue';
             // this.proyectos[id].urgente = !this.proyectos[id].urgente;
             //console.log(proyecto);
             proyecto[campo] = !proyecto[campo];
+            this.saveData();
+            
+        },
+        saveData() {
+            localStorage.setItem("proyectos", JSON.stringify (this.proyectos));
+        },
+        limpiarData() {
+            this.proyectos = [];
+            localStorage.clear();
         },
     },
     computed: {
@@ -40,7 +52,14 @@ import TotalProyectos from './TotalProyectos.vue';
             return (completados * 100) / this.numeroProyectos || 0;
         },
     },
-    components: { ProgressBar, TotalProyectos }
+    components: { 
+        ProgressBar, 
+        TotalProyectos 
+    },
+    mounted() {
+        this.proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
+    },
+
 };
 </script>
 
@@ -84,7 +103,7 @@ import TotalProyectos from './TotalProyectos.vue';
         </div>
         
         <div class="col-12 col-md-8">
-            <total-proyectos numeroProyectos="numeroProyectos" proyectos="proyectos"/>
+            <total-proyectos numeroProyectos="numeroProyectos" proyectos="proyectos" :cambiarEstado="cambiarEstado" :limpiarData="limpiarData"/>
 
         </div>
     </div>

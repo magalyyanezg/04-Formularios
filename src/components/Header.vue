@@ -15,13 +15,11 @@
 </template>
 
 <script>
-  //import Header from "./components/Header.vue"
-  import Formulario from "./Formulario.vue"
     export default {
       data:() => ( {
       url:"https://cdn.svgporn.com/logos/vue.svg?response-content-disposition=attachment%3Bfilename%3Dvue.svg",
       alt: "Vue.js", 
-      Formulario,
+    
     }),
   
     };
