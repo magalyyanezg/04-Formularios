@@ -16,8 +16,8 @@
     components: {
       Header,
       Formulario,
-    }
-  }
+    },
+  };
 </script>
 
 <style scoped>
