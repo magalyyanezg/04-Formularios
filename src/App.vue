@@ -1,5 +1,4 @@
 <template>
-  
   <div class="container mt-3">
     <Header />
    
@@ -22,7 +21,7 @@
 </script>
 
 <style scoped>
-  body {
+  div {
     margin: 0px 2rem;
   }
 </style>
