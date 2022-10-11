@@ -51,7 +51,7 @@
             data: () => ({
                 proyecto: "",
                 tipo: "",
-                urgente: flase,
+                urgente: false,
                 proyectos: [],
             }),
             methods: {
