@@ -6,9 +6,10 @@
                 :aria-valuenow="porcentaje" 
                 aria-valuemin="0" 
                 aria-valuemax="100" 
-                :style="`with: $ { porcentaje}%`" 
+                :style="`with: ${porcentaje}%`" 
                 ></div>
               </div>
+              <h1> {{porcentaje}}</h1>
         
 
 </template>
