@@ -1,9 +1,9 @@
 <template>
   
   <div class="container mt-3">
-    <Header />
+    <header />
    
-    <Formulario />
+    <formulario />
   </div>
 
 </template>
@@ -12,7 +12,7 @@
   
   import Header from "./components/Header.vue";
   import Formulario from "./components/Formulario.vue";
-  
+
   export default {
     components: {
       Header,
