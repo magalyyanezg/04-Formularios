@@ -87,7 +87,7 @@
             },
             computed: {
                 numeroProyectos() {
-                    return this.proyectos.length;
+                    return this.proyectos.legth;
                 },
                 procentaje() {
                     let completados = 0;
@@ -100,7 +100,7 @@
             },
             components: { 
                 ProgressBar, 
-                TotalProyectos 
+                TotalProyectos, 
             },
             mounted() {
                 this.proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
