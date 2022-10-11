@@ -1,68 +1,3 @@
-<script>
-import ProgressBar from './ProgressBar.vue';
-import TotalProyectos from './TotalProyectos.vue';
-    export default  {
-    data: () => ({
-        proyecto: "",
-        tipo: "",
-        urgente: flase,
-        proyectos: [],
-    }),
-    methods: {
-        resgistrarProyecto() {
-            const proyecto = {
-                proyecto: this.proyecto,
-                tipo: this.tipo,
-                urgente: this.urgente,
-                completado: false,
-            };
-            this.proyectos.push(proyecto);
-
-            this.saveData();
-
-            this.proyecto = "";
-            this.tipo = "";
-            this.urgente = false;
-        },
-        cambiarEstado(proyecto, campo) {
-            // this.proyectos[id].urgente = !this.proyectos[id].urgente;
-            //console.log(proyecto);
-            proyecto[campo] = !proyecto[campo];
-            this.saveData();
-            
-        },
-        saveData() {
-            localStorage.setItem("proyectos", JSON.stringify (this.proyectos));
-        },
-        limpiarData() {
-            this.proyectos = [];
-            localStorage.clear();
-        },
-    },
-    computed: {
-        numeroProyectos() {
-            return this.proyectos.length;
-        },
-        procentaje() {
-            let completados = 0;
-            this.proyectos.map(proyecto => {
-                if (proyecto.completado)
-                    completados++;
-            });
-            return (completados * 100) / this.numeroProyectos || 0;
-        },
-    },
-    components: { 
-        ProgressBar, 
-        TotalProyectos 
-    },
-    mounted() {
-        this.proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
-    },
-
-};
-</script>
-
 <template>
     
     <div class="row">
@@ -107,6 +42,69 @@ import TotalProyectos from './TotalProyectos.vue';
 
         </div>
     </div>
-
-    
 </template>
+
+<script>
+    import ProgressBar from './ProgressBar.vue';
+    import TotalProyectos from './TotalProyectos.vue';
+        export default  {
+            data: () => ({
+                proyecto: "",
+                tipo: "",
+                urgente: flase,
+                proyectos: [],
+            }),
+            methods: {
+                resgistrarProyecto() {
+                    const proyecto = {
+                        proyecto: this.proyecto,
+                        tipo: this.tipo,
+                        urgente: this.urgente,
+                        completado: false,
+                    };
+                    this.proyectos.push(proyecto);
+        
+                    this.saveData();
+        
+                    this.proyecto = "";
+                    this.tipo = "";
+                    this.urgente = false;
+                },
+                cambiarEstado(proyecto, campo) {
+                    // this.proyectos[id].urgente = !this.proyectos[id].urgente;
+                    //console.log(proyecto);
+                    proyecto[campo] = !proyecto[campo];
+                    this.saveData();
+                    
+                },
+                saveData() {
+                    localStorage.setItem("proyectos", JSON.stringify (this.proyectos));
+                },
+                limpiarData() {
+                    this.proyectos = [];
+                    localStorage.clear();
+                },
+            },
+            computed: {
+                numeroProyectos() {
+                    return this.proyectos.length;
+                },
+                procentaje() {
+                    let completados = 0;
+                    this.proyectos.map(proyecto => {
+                        if (proyecto.completado)
+                            completados++;
+                    });
+                    return (completados * 100) / this.numeroProyectos || 0;
+                },
+            },
+            components: { 
+                ProgressBar, 
+                TotalProyectos 
+            },
+            mounted() {
+                this.proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
+            },
+    
+        };
+</script>

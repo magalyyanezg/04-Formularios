@@ -1,9 +1,9 @@
 <template>
   
   <div class="container mt-3">
-    <header />
+    <Header />
    
-    <formulario />
+    <Formulario />
   </div>
 
 </template>
