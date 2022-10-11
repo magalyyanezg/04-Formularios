@@ -1,8 +1,8 @@
 <template>
   <div class="container mt-3">
-    <Header />
+    <Header/>
    
-    <Formulario />
+    <Formulario/>
   </div>
 
 </template>

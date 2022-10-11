@@ -6,7 +6,7 @@
         </div>
 
 
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-5">
         
             <form @submit.prevent="resgistrarProyecto">
 
@@ -37,8 +37,8 @@
         
         </div>
         
-        <div class="col-12 col-md-8">
-            <total-proyectos numeroProyectos="numeroProyectos" proyectos="proyectos" :cambiarEstado="cambiarEstado" :limpiarData="limpiarData"/>
+        <div class="col-12 col-md-7">
+            <total-proyectos numeroProyectos="numeroProyectos" :proyectos="proyectos" :cambiarEstado="cambiarEstado" :limpiarData="limpiarData"/>
 
         </div>
     </div>
@@ -48,11 +48,16 @@
     import ProgressBar from './ProgressBar.vue';
     import TotalProyectos from './TotalProyectos.vue';
         export default  {
+            components: {
+                ProgressBar,
+                TotalProyectos,
+            },
             data: () => ({
                 proyecto: "",
                 tipo: "",
                 urgente: false,
                 proyectos: [],
+                numeroProyectos: 0,
             }),
             methods: {
                 resgistrarProyecto() {
@@ -87,7 +92,7 @@
             },
             computed: {
                 numeroProyectos() {
-                    return this.proyectos.legth;
+                    return this.proyectos.length;
                 },
                 procentaje() {
                     let completados = 0;
@@ -97,10 +102,6 @@
                     });
                     return (completados * 100) / this.numeroProyectos || 0;
                 },
-            },
-            components: { 
-                ProgressBar, 
-                TotalProyectos, 
             },
             mounted() {
                 this.proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
