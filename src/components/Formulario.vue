@@ -88,7 +88,7 @@
             },
             computed: {
                 numeroProyectos() {
-                    return this.proyectos.length;
+                    return this.proyectos.legth;
                 },
                 porcentaje() {
                     let completados = 0;
