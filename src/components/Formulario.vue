@@ -79,7 +79,7 @@
                     
                 },
                 saveData() {
-                    localStorage.setItem("proyectos", JSON.stringify (this.proyectos));
+                    localStorage.setItem("proyectos", JSON.stringify(this.proyectos));
                 },
                 limpiarData() {
                     this.proyectos = [];
