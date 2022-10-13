@@ -37,7 +37,7 @@
         </div>
 
         <div class="col-12 col-md-7">
-            <total-proyectos :numeroProyectos="numeroProyectos" :proyectos="proyectos" :cambiarEstado="cambiarEstado" :limpiarData="limpiarData" :remove="remove"/>
+            <total-proyectos :numeroProyectos="numeroProyectos" :proyectos="proyectos" :cambiarEstado="cambiarEstado" :limpiarData="limpiarData" :borrado="borrado"/>
 
         </div>
         
@@ -92,7 +92,7 @@ import { onMounted } from 'vue';
                 this.proyectos = [];
                 localStorage.clear;
             },
-            remove: function(index) {
+            borrado: function(index) {
                 this.proyectos.splice(index, 1);
                 this.saveData();
             },
