@@ -4,7 +4,7 @@
                 <h3>Total proyectos:  {{ numeroProyectos }} </h3>
             </div>
             <div class="col-6 text-end">
-                <button @click="limpiarData" class="btn btn-warning">Lipiar proyectos</button>
+                <button @click="limpiarData" class="btn btn-warning">Limpiar proyectos</button>
             </div>
         </div>
 
