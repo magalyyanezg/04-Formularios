@@ -38,7 +38,7 @@
         </div>
         
         <div class="col-12 col-md-7">
-            <total-proyectos numeroProyectos="numeroProyectos" :proyectos="proyectos" :cambiarEstado="cambiarEstado" :limpiarData="limpiarData"/>
+            <total-proyectos :numeroProyectos="numeroProyectos" :proyectos="proyectos" :cambiarEstado="cambiarEstado" :limpiarData="limpiarData"/>
 
         </div>
     </div>

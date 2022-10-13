@@ -1,5 +1,5 @@
 <template>
-      <h3 class="text-center">Progreso:  {{porcentaje}} %</h3>
+      <h3 class="text-center">Progreso: {{porcentaje}}%</h3>
             <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
                 role="progressbar"
