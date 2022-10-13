@@ -28,7 +28,7 @@
                     <td>{{proyecto.tipo}}</td>
                     <td @click="cambiarEstado(proyecto,'urgente')" :class="proyecto.urgente ? 'bg-success' : 'bg-danger'">{{proyecto.urgente ? "Si" : "No"}}</td>
                     <td @click="cambiarEstado(proyecto, 'completado')" :class="proyecto.completado ? 'bg-success' : 'bg-danger'">{{proyecto.completado ? "Completo" : "Incompleto"}}</td>
-                    <td @click="remove(proyectos)">{{ "Borrar" }}</td>
+                    <td @click="remove(proyectos)"> "Borrar" </td>
                 </tr>
             </tbody>
         </table>
