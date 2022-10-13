@@ -48,10 +48,6 @@
     import ProgressBar from './ProgressBar.vue';
     import TotalProyectos from './TotalProyectos.vue';
         export default  {
-            components: {
-                ProgressBar,
-                TotalProyectos,
-            },
             data: () => ({
                 proyecto: "",
                 tipo: "",
@@ -94,7 +90,7 @@
                 numeroProyectos() {
                     return this.proyectos.length;
                 },
-                procentaje() {
+                porcentaje() {
                     let completados = 0;
                     this.proyectos.map(proyecto => {
                         if (proyecto.completado)
@@ -102,6 +98,8 @@
                     });
                     return (completados * 100) / this.numeroProyectos || 0;
                 },
+            },
+            components: { ProgressBar, TotalProyectos 
             },
             mounted() {
                 this.proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
