@@ -99,8 +99,7 @@
                     return (completados * 100) / this.numeroProyectos || 0;
                 },
             },
-            components: { ProgressBar, TotalProyectos 
-            },
+            components: { ProgressBar, TotalProyectos},
             mounted() {
                 this.proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
             },
